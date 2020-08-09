@@ -26,10 +26,6 @@ public class MainApp {
         userService.add(new User("User3", "Lastname3", "user3@mail.ru", new Car("Mitsubishi", 111)));
         userService.add(new User("User4", "Lastname4", "user4@mail.ru", new Car("Жигули", 333)));
 
-        User userFind = userService.findUserByCar(111);
-        System.out.println(userFind.toString());
-
-
         List<User> users = userService.listUsers();
         for (User user : users) {
             System.out.println("Id = " + user.getId());
@@ -47,6 +43,9 @@ public class MainApp {
             System.out.println("Series = " + car.getSeries());
             System.out.println();
         }
+        
+        User userFind = userService.findUserByCar(111);
+        System.out.println(userFind.toString());
 
         context.close();
     }
